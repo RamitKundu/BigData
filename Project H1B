@@ -1,0 +1,36 @@
+                                               
+                                                            H1B
+                         -----------------------------------------------------------------------------
+
+1a)select year,COUNT(year) as yr from h1b_final where job_title LIKE '%DATA ENGINEER%' group by year order by yr desc;
+
+year	yr
+2016	786
+2015	394
+2014	249
+2013	151
+2012	81
+2011	60
+
+
+2a)select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2011' group by worksite order by ws desc limit 1;
+select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2012' group by worksite order by ws desc limit 1;
+select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2013' group by worksite order by ws desc limit 1;
+select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2014' group by worksite order by ws desc limit 1;
+select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2015' group by worksite order by ws desc limit 1;
+select worksite,COUNT(worksite) as ws from h1b_final where job_title LIKE '%DATA ENGINEER%' and year='2016' group by worksite order by ws desc limit 1;
+
+b) select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2011' group by worksite order by w desc limit 5; 
+ select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2012' group by worksite order by w desc limit 5;
+ select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2013' group by worksite order by w desc limit 5; 
+ select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2014' group by worksite order by w desc limit 5;
+ select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2015' group by worksite order by w desc limit 5;
+ select worksite,COUNT(worksite) as w from h1b_final where case_status='CERTIFIED' and year='2016' group by worksite order by w desc limit 5; 
+ 
+ 4)select employer_name,COUNT(year) as tot from h1b_final where year='2011' group by employer_name  order by tot desc limit 5;
+
+5b)select job_title,COUNT(job_title) as tot from h1b_final where case_status='CERTIFIED' and year='2011' group by job_title order by tot desc limit 10;
+
+
+ 
+
